@@ -8,7 +8,6 @@ const app = express();
 const port = process.env.PORT || 3069;
 
 // Database configuration
-<<<<<<< HEAD
 const dbConfig = {
   user: process.env.DB_USER || 'postgres',
   host: process.env.DB_HOST || 'postgres',
@@ -16,15 +15,6 @@ const dbConfig = {
   password: process.env.DB_PASSWORD || 'admin123',
   port: process.env.DB_PORT || 5432,
 };
-=======
-const pool = new Pool({
-    user: 'postgres',
-    host: 'postgres',
-    database: 'asset_management',
-    password: 'admin123',
-    port: 5432,
-});
->>>>>>> 436797ffe37421d7dd2e0cfa614a39f5c52a97c4
 
 // Create database pool with retry logic
 const createPool = async () => {
@@ -167,11 +157,7 @@ const initApp = async () => {
   } catch (err) {
     console.error('Failed to initialize application:', err);
     process.exit(1);
-<<<<<<< HEAD
   }
 };
 
 initApp();
-=======
-});
->>>>>>> 436797ffe37421d7dd2e0cfa614a39f5c52a97c4
