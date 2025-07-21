@@ -5,7 +5,7 @@ services:
     image: postgres:14
     container_name: postgres-ajay-asset
     ports:
-      - "6617:5432"
+      - "6628:5432"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: admin123
@@ -22,7 +22,7 @@ services:
     build: ./Backend
     container_name: backend-ajay-asset
     ports:
-      - "3060:3060"
+      - "3069:3069"
     depends_on:
       postgres:
         condition: service_healthy
@@ -37,7 +37,7 @@ services:
     build: ./Frontend
     container_name: frontend-ajay-asset
     ports:
-      - "8178:80"
+      - "8194:80"
     depends_on:
       - backend
 
@@ -45,7 +45,7 @@ services:
     build: ./Hr_Page
     container_name: hrpage-ajay-asset
     ports:
-      - "8179:80"
+      - "8195:80"
     depends_on:
       - backend
 
